@@ -16,21 +16,36 @@ const imgList = document.querySelector('*[data-img-list]');
 const dialog = document.querySelector('#lightbox');
 const dialogClose = document.getElementById('closeDialogBtn');
 const dialogImg = document.getElementById('dialogImg');
+const currentImg = document.getElementById('currentImg');
 
-function openDialog() {
+function openDialog(index) {
+    dialogImg.setAttribute("src", `${images[index].src}`);
+    dialogImg.setAttribute("alt", `${images[index].alt}`);
+    currentImg.innerHTML = `${index+1} / ${images.length}`
     dialog.showModal();
 }
 
-function colseDialog() {
+function closeDialog() {
     dialog.close();
 }
 
-
 function createImagesList() {
 
+    imgList.innerHTML = `
+        ${images.map((item)=>(  
+        `
+            <li>
+                <img src='${item.src}' alt='${item.alt}' data-itemImage class="itemImage">
+            </li>
+        `
+        )).join('')}
+    `
+    let itemImg = document.querySelectorAll('*[data-itemImage]');
+    itemImg.forEach(function(img, index){
+        img.setAttribute('onClick', `openDialog(${index})`);
+    });
 }
 
 function render() {
     createImagesList();
-    console.log(dialogImg);
 }
