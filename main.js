@@ -13,25 +13,24 @@ const images = [
 ];
 
 const imgList = document.querySelector('*[data-img-list]');
-const $dialog = document.querySelector('#lightbox');
+const dialog = document.querySelector('#lightbox');
+const dialogClose = document.getElementById('closeDialogBtn');
+const dialogImg = document.getElementById('dialogImg');
+
+function openDialog() {
+    dialog.showModal();
+}
+
+function colseDialog() {
+    dialog.close();
+}
+
 
 function createImagesList() {
 
-    imgList.innerHTML = `
-        ${images.map((item)=>(
-            `
-            <li>
-                <img src='${item.src}' alt='${item.alt}' class="itemImage">
-            </li>
-            `
-        )).join('')}
-    `
 }
 
-function openDialog(){
-    $dialog.showModal();
+function render() {
+    createImagesList();
+    console.log(dialogImg);
 }
-function colseDialog(){
-    $dialog.close();
-}
-createImagesList();
