@@ -17,6 +17,8 @@ const dialog = document.querySelector('#lightbox');
 const dialogClose = document.getElementById('closeDialogBtn');
 const dialogImg = document.getElementById('dialogImg');
 const currentImg = document.getElementById('currentImg');
+const nextBtn = document.getElementById('nextBtn');
+const previousBtn = document.getElementById('previousBtn');
 
 
 function nextImage() {
@@ -50,13 +52,13 @@ function updateImg(index) {
     dialogImg.setAttribute("alt", `${images[index].alt}`);
     currentImg.setAttribute('value', `${index}`);
     currentImg.innerHTML = `${index+1} / ${images.length}`
-    console.log(currentImg.getAttribute('value'));
-
 }
 
 
 function openDialog(index) {
     updateImg(index);
+    previousBtn.setAttribute('onClick', 'previousImage()');
+    nextBtn.setAttribute('onClick', 'nextImage()')
     dialog.showModal();
 }
 
