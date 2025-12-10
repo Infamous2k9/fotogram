@@ -26,12 +26,12 @@
             <ul data-img-list class="images-list"></ul>
         </section>
         <dialog id="lightbox">
-            <button id="closeDialogBtn">x</button>
+            <button id="closeDialogBtn" onclick="closeDialog()">x</button>
             <div>
                 <img id="dialogImg" src="" alt="">
-                <button>test</button>
-                <button>test</button>
-                <span>1/10</span>
+                <button>Zurück</button>
+                <button>Weiter</button>
+                <span id="currentImg"></span>
             </div>
         </dialog>
     </main>
