@@ -1,5 +1,3 @@
-let imgList = document.querySelector('*[data-img-list]')
-
 const images = [
     { src: './assets/img//public/photo-1.jpg', alt: 'alt text photo-1' },
     { src: './assets/img//public/photo-2.jpg', alt: 'alt text photo-2' },
@@ -14,6 +12,8 @@ const images = [
 
 ];
 
+const imgList = document.querySelector('*[data-img-list]');
+const $dialog = document.querySelector('#lightbox');
 
 function createImagesList() {
 
@@ -28,6 +28,10 @@ function createImagesList() {
     `
 }
 
-
-
+function openDialog(){
+    $dialog.showModal();
+}
+function colseDialog(){
+    $dialog.close();
+}
 createImagesList();
