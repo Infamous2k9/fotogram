@@ -18,10 +18,45 @@ const dialogClose = document.getElementById('closeDialogBtn');
 const dialogImg = document.getElementById('dialogImg');
 const currentImg = document.getElementById('currentImg');
 
-function openDialog(index) {
+
+function nextImage() {
+    let currentIndex = parseInt(currentImg.getAttribute('value'));
+    let nextIndex = currentIndex + 1;
+
+
+    if (nextIndex == images.length) {
+        nextIndex = 0;
+        updateImg(nextIndex);
+    } else {
+        updateImg(nextIndex);
+    }
+}
+
+function previousImage() {
+    let currentIndex = parseInt(currentImg.getAttribute('value'));
+    let previousIndex = currentIndex - 1;
+
+
+    if (previousIndex < 0) {
+        previousIndex = images.length - 1;
+        updateImg(previousIndex);
+    } else {
+        updateImg(previousIndex);
+    }
+}
+
+function updateImg(index) {
     dialogImg.setAttribute("src", `${images[index].src}`);
     dialogImg.setAttribute("alt", `${images[index].alt}`);
+    currentImg.setAttribute('value', `${index}`);
     currentImg.innerHTML = `${index+1} / ${images.length}`
+    console.log(currentImg.getAttribute('value'));
+
+}
+
+
+function openDialog(index) {
+    updateImg(index);
     dialog.showModal();
 }
 
