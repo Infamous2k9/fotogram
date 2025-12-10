@@ -28,10 +28,12 @@
         <dialog id="lightbox">
             <button id="closeDialogBtn" onclick="closeDialog()">x</button>
             <div>
-                <img id="dialogImg" src="" alt="">
-                <button>Zurück</button>
-                <button>Weiter</button>
-                <span id="currentImg"></span>
+                <img id="dialogImg" src="" alt="" class="dialog-img">
+                <div class="dialog-footer">
+                    <button id="previousBtn">Zurück</button>
+                    <span id="currentImg"></span>
+                    <button id="nextBtn">Weiter</button>
+                </div>
             </div>
         </dialog>
     </main>
