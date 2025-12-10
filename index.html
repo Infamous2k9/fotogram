@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body onload="render()">
     <header class="headline-site">
         <img src="./assets/img/Fotogram_Logo.svg" class="headline_logo" alt="Fotogram Logo">
     </header>
@@ -25,10 +25,10 @@
             <h1>Deine Persönliche Bilder Gallerie</h1>
             <ul data-img-list class="images-list"></ul>
         </section>
-        <dialog>
-            <button>x</button>
+        <dialog id="lightbox">
+            <button id="closeDialogBtn">x</button>
             <div>
-                <img src="" alt="current image">
+                <img id="dialogImg" src="" alt="">
                 <button>test</button>
                 <button>test</button>
                 <span>1/10</span>
