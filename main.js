@@ -92,5 +92,21 @@ function render() {
                 closeDialog();
             }
         });
+        dialog.addEventListener('keydown', (event) =>{
+            const key = event.key;
+            switch (key) {
+                case "ArrowLeft":
+                    previousImage();
+                    break;
+                case "ArrowRight":
+                    nextImage();
+                    break;
+                case "Escape":
+                    closeDialog();
+                    break;
+                default:
+                    break;
+            }
+        })
     }
 }
