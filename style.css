@@ -66,10 +66,38 @@ ul {
     border-top: 2px solid #fafafa;
 }
 
+#lightbox::backdrop {
+    background-color: #222222;
+    opacity: 0.5;
+}
+
+#lightbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 32px);
+    height: 510px;
+    max-width: 436px;
+    background-color: #F8F8F2;
+}
+
+.dialogContent {
+    text-align: center;
+}
+
+#closeDialogBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    font-size: larger;
+    margin: 16px;
+}
+
 #dialogImg {
-    width: 50%;
+    width: 75%;
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    padding: 32px;
+    border: #222222 solid 1px;
 }
