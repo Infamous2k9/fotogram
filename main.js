@@ -85,4 +85,12 @@ function createImagesList() {
 
 function render() {
     createImagesList();
+
+    if (dialog) {
+        dialog.addEventListener('click', (event) => {
+            if (event.target === dialog) {
+                closeDialog();
+            }
+        });
+    }
 }
