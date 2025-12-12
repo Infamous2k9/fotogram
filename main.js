@@ -73,7 +73,7 @@ function createImagesList() {
         ${images.map((item)=>(  
         `
             <li>
-                <img src='${item.src}' alt='${item.alt}' data-itemImage class="itemImage">
+                <img src='${item.src}' alt='${item.alt}' data-itemImage class="itemImage" aria-label="Bild in großer Darstellung anzeigen">
             </li>
         `
         )).join('')}

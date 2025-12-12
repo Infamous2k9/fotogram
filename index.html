@@ -26,18 +26,18 @@
             <ul data-img-list class="images-list"></ul>
         </section>
         <dialog id="lightbox">
-            <header class="dialog-header">
+            <header class="dialog-header" aria-labelledby="imageName">
                 <h2 id="imageName"></h2>
-                <button id="closeDialogBtn" onclick="closeDialog()">X</button>
+                <button id="closeDialogBtn" aria-label="Groß Ansicht schließen" onclick="closeDialog()">X</button>
             </header>
 
-            <aside class="dialogContent">
+            <aside class="dialogContent" aria-label="Bild in groß Ansicht">
                 <img id="dialogImg" src="" alt="" class="dialog-img">
             </aside>
             <footer class="dialog-footer">
-                <button id="previousBtn"></button>
-                <span id="currentImg"></span>
-                <button id="nextBtn"></button>
+                <button id="previousBtn" aria-label="vorheriges Bild anzeigen"></button>
+                <span id="currentImg" aria-label="aktuelles Bild"></span>
+                <button id="nextBtn" aria-label="nächstes Bild anzeigen"></button>
             </footer>
         </dialog>
     </main>
