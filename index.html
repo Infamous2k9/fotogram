@@ -20,21 +20,25 @@
         <img src="./assets/img/Fotogram_Logo.svg" class="headline_logo" alt="Fotogram Logo">
     </header>
 
-    <main>
-        <section class="content">
+    <main class="content">
+        <section>
             <h1>Your personal photo album</h1>
             <ul data-img-list class="images-list"></ul>
         </section>
         <dialog id="lightbox">
-            <button id="closeDialogBtn" onclick="closeDialog()">x</button>
-            <div class="dialogContent">
+            <header class="dialog-header">
+                <h2 id="imageName"></h2>
+                <button id="closeDialogBtn" onclick="closeDialog()">X</button>
+            </header>
+
+            <aside class="dialogContent">
                 <img id="dialogImg" src="" alt="" class="dialog-img">
-                <div class="dialog-footer">
-                    <button id="previousBtn">Zurück</button>
-                    <span id="currentImg"></span>
-                    <button id="nextBtn">Weiter</button>
-                </div>
-            </div>
+            </aside>
+            <footer class="dialog-footer">
+                <button id="previousBtn"></button>
+                <span id="currentImg"></span>
+                <button id="nextBtn"></button>
+            </footer>
         </dialog>
     </main>
 

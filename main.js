@@ -1,14 +1,14 @@
 const images = [
-    { src: './assets/img//public/photo-1.jpg', alt: 'alt text photo-1' },
-    { src: './assets/img//public/photo-2.jpg', alt: 'alt text photo-2' },
-    { src: './assets/img//public/photo-3.jpg', alt: 'alt text photo-3' },
-    { src: './assets/img//public/photo-4.jpg', alt: 'alt text photo-4' },
-    { src: './assets/img//public/photo-5.jpg', alt: 'alt text photo-5' },
-    { src: './assets/img//public/photo-6.jpg', alt: 'alt text photo-6' },
-    { src: './assets/img//public/photo-7.jpg', alt: 'alt text photo-7' },
-    { src: './assets/img//public/photo-8.jpg', alt: 'alt text photo-8' },
-    { src: './assets/img//public/photo-9.jpg', alt: 'alt text photo-9' },
-    { src: './assets/img//public/photo-10.jpg', alt: 'alt text photo-10' },
+    { name: 'photo-1', src: './assets/img//public/photo-1.jpg', alt: 'alt text photo-1' },
+    { name: 'photo-2', src: './assets/img//public/photo-2.jpg', alt: 'alt text photo-2' },
+    { name: 'photo-3', src: './assets/img//public/photo-3.jpg', alt: 'alt text photo-3' },
+    { name: 'photo-4', src: './assets/img//public/photo-4.jpg', alt: 'alt text photo-4' },
+    { name: 'photo-5', src: './assets/img//public/photo-5.jpg', alt: 'alt text photo-5' },
+    { name: 'photo-6', src: './assets/img//public/photo-6.jpg', alt: 'alt text photo-6' },
+    { name: 'photo-7', src: './assets/img//public/photo-7.jpg', alt: 'alt text photo-7' },
+    { name: 'photo-8', src: './assets/img//public/photo-8.jpg', alt: 'alt text photo-8' },
+    { name: 'photo-9', src: './assets/img//public/photo-9.jpg', alt: 'alt text photo-9' },
+    { name: 'photo-1', src: './assets/img//public/photo-10.jpg', alt: 'alt text photo-10' },
 
 ];
 
@@ -19,7 +19,7 @@ const dialogImg = document.getElementById('dialogImg');
 const currentImg = document.getElementById('currentImg');
 const nextBtn = document.getElementById('nextBtn');
 const previousBtn = document.getElementById('previousBtn');
-
+const currentHeadText = document.getElementById('imageName');
 
 function nextImage() {
     let currentIndex = parseInt(currentImg.getAttribute('value'));
@@ -52,6 +52,7 @@ function updateImg(index) {
     dialogImg.setAttribute("alt", `${images[index].alt}`);
     currentImg.setAttribute('value', `${index}`);
     currentImg.innerHTML = `${index+1} / ${images.length}`
+    currentHeadText.innerHTML = images[index].name;
 }
 
 
