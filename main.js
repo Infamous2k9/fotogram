@@ -20,9 +20,10 @@ const currentImg = document.getElementById('currentImg');
 const nextBtn = document.getElementById('nextBtn');
 const previousBtn = document.getElementById('previousBtn');
 const currentHeadText = document.getElementById('imageName');
+let currentImgIndex = 0;
 
 function nextImage() {
-    let currentIndex = parseInt(currentImg.getAttribute('value'));
+    let currentIndex = currentImgIndex;
     let nextIndex = currentIndex + 1;
 
 
@@ -35,7 +36,7 @@ function nextImage() {
 }
 
 function previousImage() {
-    let currentIndex = parseInt(currentImg.getAttribute('value'));
+    let currentIndex = currentImgIndex;
     let previousIndex = currentIndex - 1;
 
 
@@ -50,7 +51,7 @@ function previousImage() {
 function updateImg(index) {
     dialogImg.setAttribute("src", `${images[index].src}`);
     dialogImg.setAttribute("alt", `${images[index].alt}`);
-    currentImg.setAttribute('value', `${index}`);
+    currentImgIndex = index;
     currentImg.innerHTML = `${index+1} / ${images.length}`
     currentHeadText.innerHTML = images[index].name;
 }
