@@ -68,22 +68,32 @@ function closeDialog() {
     dialog.close();
 }
 
+function renderListItemHTML(image) {
+    return `
+        <li>
+            <img src='${image.src}' alt='${image.alt}' data-itemImage class="itemImage" aria-label="Bild in großer Darstellung anzeigen">
+        </li>
+    `
+}
+
 function createImagesList() {
+
+
 
     imgList.innerHTML = `
         ${images.map((item)=>(  
-        `
-            <li>
-                <img src='${item.src}' alt='${item.alt}' data-itemImage class="itemImage" aria-label="Bild in großer Darstellung anzeigen">
-            </li>
-        `
+        `${renderListItemHTML(item)}`
         )).join('')}
     `
+
+
     let itemImg = document.querySelectorAll('*[data-itemImage]');
-    itemImg.forEach(function(img, index){
+    itemImg.forEach(function(img, index) {
         img.setAttribute('onClick', `openDialog(${index})`);
     });
 }
+
+
 
 function render() {
     createImagesList();
@@ -94,7 +104,7 @@ function render() {
                 closeDialog();
             }
         });
-        dialog.addEventListener('keydown', (event) =>{
+        dialog.addEventListener('keydown', (event) => {
             const key = event.key;
             switch (key) {
                 case "ArrowLeft":
